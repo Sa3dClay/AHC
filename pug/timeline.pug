@@ -1,0 +1,25 @@
+-
+    images = [
+        'https://drive.google.com/uc?export=view&id=1EgUR29UwCzdS5DbjTHzXp-zXDK9ljHbD',
+        'https://drive.google.com/uc?export=view&id=1ohI1_wQP0sxp2ckzwbx-MRiroSD6TWal',
+        'https://drive.google.com/uc?export=view&id=1ckGagewvlSO694X31Jp_0E_pZhNDKXpd',
+        'https://drive.google.com/uc?export=view&id=1drBJ7_HftwfSHzNPxDuIFjmjQlcmboGk',
+        'https://drive.google.com/uc?export=view&id=1k7DrxJevx90oDYMe100nxziblyHhjgQW',
+        'https://drive.google.com/uc?export=view&id=1Slw90JDBd6ytjtgD_skx-bmCclstIlLu',
+        'https://drive.google.com/uc?export=view&id=1z16ZrLMMu4Z0g7aEgJlXfJ6DaPKBUEju',
+        'https://drive.google.com/uc?export=view&id=1A03h_Q4xPr9_JLi1ZEjnklhAReigyCNI'
+    ]
+    imagesPath = 'imgs/projects/'
+
+.works#works
+    h4.work-head.text-center My Projects
+    .row
+        - for (var i=0; i<images.length; i+=2)
+            .col-6.line-right.d-flex.justify-content-end
+                .el-right
+                    a(href=images[i], target="_blank")
+                        img.img-fluid(src=images[i])
+            .col-6.line-left.d-flex.justify-content-start
+                .el-left
+                    a(href=images[i+1], target="_blank")
+                        img.img-fluid(src=images[i+1])

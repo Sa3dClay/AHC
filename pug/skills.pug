@@ -1,0 +1,23 @@
+-
+    mySkills = {
+        'HTML': 90,
+        'CSS': 90,
+        'JS': 60,
+        'PHP': 50,
+        'Laravel': 60,
+        'VueJS': 50
+    }
+
+.mySkills#mySkills
+    h4.skills-head My Skills
+
+    each value, index in mySkills
+        .progress.my-3(style="height: 33px;")
+            .progress-bar.bg-warning(
+                role="progressbar"
+                style="width: " + value + "%"
+                aria-valuenow=value
+                aria-valuemin="0"
+                aria-valuemax="100"
+                )= index
+hr

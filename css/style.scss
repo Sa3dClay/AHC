@@ -1,0 +1,288 @@
+// vars
+$mainFont: "Comfortaa";
+$mainTextColor: #333;
+$bgMainColor: #343a40;
+$bgSecondary: #ecf0f1;
+$secondaryColor: #f1c40f;
+$indigoColor: #3f51b5;
+
+// timeline vars
+$lineColor: $secondaryColor;
+$darkColor: $bgMainColor;
+$topValue: 100px;
+$smallTop: $topValue/2;
+$lineWidth: 16px;
+$xBefore: -16px;
+$xAfter: -24px;
+
+// @font
+@font-face {
+  font-family: $mainFont;
+  src: url("../fonts/Comfortaa-Regular.ttf");
+}
+
+// global
+body {
+  background-color: $indigoColor;
+}
+* {
+  font-family: $mainFont;
+}
+html {
+  scroll-behavior: smooth;
+}
+hr {
+  margin: 0.8rem 0;
+}
+.app {
+  position: relative;
+}
+.content {
+  padding-top: 12.8px;
+  padding-bottom: 12.8px;
+}
+
+// navbar
+.navbar {
+  .nav-item {
+    .nav-link {
+      transition: 0.3s;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// card
+.cardAboutMe {
+  padding: 40px 0;
+  background-color: $bgMainColor;
+  color: $bgSecondary;
+  .card-img img {
+    max-width: 122px;
+    transition: 0.3s;
+    &:hover {
+      opacity: 80%;
+    }
+  }
+  .card-txt {
+    p {
+      margin-bottom: 4px;
+    }
+    .icona {
+      color: $secondaryColor;
+    }
+    .jobTitle span {
+      color: $secondaryColor;
+    }
+    .email span {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Skills
+.mySkills {
+  padding: 40px;
+  background-color: $bgSecondary;
+  .skills-head {
+    margin: 1rem 0;
+  }
+  .progress {
+    background-color: #fff;
+    border-radius: 0;
+    .progress-bar {
+      font-size: 18px;
+      color: $mainTextColor;
+      font-style: italic;
+      background-color: $secondaryColor;
+      border-radius: none;
+    }
+  }
+}
+
+// Experiences
+.myExp {
+  padding: 40px;
+  background-color: $bgMainColor;
+  color: $bgSecondary;
+  .exp-head {
+    margin-bottom: 40px;
+    span {
+      color: $secondaryColor;
+    }
+  }
+  .exp-field {
+    margin-top: 40px;
+    .icona {
+      color: $secondaryColor;
+    }
+  }
+}
+
+// timeline
+.works {
+  padding: 40px;
+  .work-head {
+    margin-bottom: 40px;
+  }
+  background-color: $bgSecondary;
+  // group
+  .line-right,
+  .line-left {
+    overflow: hidden;
+    img {
+      max-height: 500px;
+      transition: all 0.6s;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .el-right,
+    .el-left {
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: $lineWidth;
+        height: $lineWidth;
+        border-radius: 50%;
+        border: 3px solid $lineColor;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-width: $lineWidth/2;
+        border-style: solid;
+      }
+    }
+  }
+  // right
+  .line-right {
+    border-right: 2px solid $lineColor;
+    img {
+      margin-bottom: $topValue;
+    }
+    .el-right {
+      &:after {
+        top: $topValue;
+        right: $xAfter;
+        background-color: $darkColor;
+      }
+      &:before {
+        border-color: transparent transparent transparent $lineColor;
+        top: $topValue;
+        right: $xBefore;
+      }
+    }
+  }
+  // left
+  .line-left {
+    img {
+      margin-top: $topValue;
+    }
+    .el-left {
+      &:after {
+        top: $topValue*2;
+        left: $xAfter;
+        background-color: $darkColor;
+      }
+      &:before {
+        border-color: transparent $lineColor transparent transparent;
+        top: $topValue*2;
+        left: $xBefore;
+      }
+    }
+  }
+}
+
+// footer
+footer {
+  background-color: $bgMainColor;
+  color: #fff;
+  p {
+    margin: 0;
+  }
+  a {
+    color: #fff;
+    padding-left: 10px;
+    &:hover {
+      color: $secondaryColor;
+    }
+  }
+}
+
+// @media
+
+// Large devices and more
+@media (min-width: 992px) {
+  .navbar {
+    padding: 0;
+    .nav-item {
+      padding: 14px 6px;
+    }
+  }
+}
+
+// Large devices and less
+@media (max-width: 991.98px) {
+  .ml-auto {
+    text-align: center;
+  }
+}
+
+// Small devices and more
+@media (min-width: 768px) {
+  .myExp {
+    .exp-field {
+      h5 {
+        padding-left: 40px;
+      }
+    }
+  }
+}
+
+// Small devices and less
+@media (max-width: 767.98px) {
+  .cardAboutMe {
+    .card-img img {
+      display: block;
+      margin: 0 auto 22px;
+    }
+    .card-txt {
+      text-align: center;
+    }
+  }
+
+  .mySkills,
+  .myExp {
+    h4,
+    h5 {
+      text-align: center;
+    }
+  }
+
+  .works {
+    .line-right {
+      .el-right {
+        &:after,
+        &:before {
+          top: $smallTop;
+        }
+      }
+    }
+
+    .line-left {
+      .el-left {
+        &:after,
+        &:before {
+          top: $smallTop*2;
+        }
+      }
+    }
+  }
+}

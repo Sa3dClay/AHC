@@ -1,0 +1,19 @@
+-
+    myExperiences = {
+        'Web-Design': `I have 3 years of experience in web design, so I can build fully responsive web applications for mobile, tablet and desktop. I can provide the design with animation and nice effects. Also, I can integrate libraries and frameworks like (bootstrap or hover.css). I also try to cover UI/UX design standards for nice UI.`,
+
+        'Web-Development': `I am intermediate in PHP, but I can build a full web app with Laravel and Vue frameworks.`
+    }
+
+.myExp#myExp
+    h4.exp-head My #[span Experiences]
+
+    .exp-detailed
+        each value, index in myExperiences
+            .exp-field
+                h5
+                    i.fab.fa-uikit.icona
+                    | 
+                    = index
+                p= value
+hr
